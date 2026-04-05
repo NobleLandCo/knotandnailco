@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    overflow: hidden;
+    background: #1a1208;
+    font-family: 'Georgia', serif;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:
+      radial-gradient(ellipse at 50% 0%, rgba(139, 90, 43, 0.18) 0%, transparent 65%),
+      radial-gradient(ellipse at 50% 100%, rgba(80, 50, 20, 0.3) 0%, transparent 60%),
+      #161009;
+    overflow: hidden;
+  }
+
+  /* Wood grain lines */
+  .grain {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        92deg,
+        transparent,
+        transparent 18px,
+        rgba(255,255,255,0.012) 18px,
+        rgba(255,255,255,0.012) 19px
+      ),
+      repeating-linear-gradient(
+        88deg,
+        transparent,
+        transparent 42px,
+        rgba(255,255,255,0.008) 42px,
+        rgba(255,255,255,0.008) 43px
+      );
+    pointer-events: none;
+  }
+
+  /* Corner ornaments */
+  .corner {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    opacity: 0.35;
+  }
+  .corner-tl { top: 40px; left: 40px; border-top: 2px solid #c8963e; border-left: 2px solid #c8963e; }
+  .corner-tr { top: 40px; right: 40px; border-top: 2px solid #c8963e; border-right: 2px solid #c8963e; }
+  .corner-bl { bottom: 40px; left: 40px; border-bottom: 2px solid #c8963e; border-left: 2px solid #c8963e; }
+  .corner-br { bottom: 40px; right: 40px; border-bottom: 2px solid #c8963e; border-right: 2px solid #c8963e; }
+
+  /* Top rule */
+  .top-rule {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0.6;
+  }
+  .rule-line {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #c8963e);
+  }
+  .rule-line.right {
+    background: linear-gradient(to left, transparent, #c8963e);
+  }
+  .rule-diamond {
+    width: 6px;
+    height: 6px;
+    background: #c8963e;
+    transform: rotate(45deg);
+  }
+
+  .content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    padding: 0 80px;
+  }
+
+  .eyebrow {
+    font-family: 'Georgia', serif;
+    font-size: 13px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #c8963e;
+    margin-bottom: 40px;
+    opacity: 0.9;
+  }
+
+  .logo-wrap {
+    margin-bottom: 44px;
+  }
+
+  .logo-wrap img {
+    width: 420px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 8px 24px rgba(200, 150, 62, 0.25));
+  }
+
+  .headline {
+    font-family: 'Georgia', serif;
+    font-size: 68px;
+    font-weight: normal;
+    color: #f0e6d3;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+
+  .headline em {
+    font-style: italic;
+    color: #c8963e;
+  }
+
+  .divider {
+    width: 60px;
+    height: 2px;
+    background: #c8963e;
+    margin: 28px auto;
+    opacity: 0.8;
+  }
+
+  .subtext {
+    font-family: 'Georgia', serif;
+    font-size: 20px;
+    color: #b8a990;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    max-width: 580px;
+    margin: 0 auto 36px;
+  }
+
+  .subtext strong {
+    color: #d4c4a8;
+  }
+
+  .tagline {
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: #c8963e;
+    opacity: 0.75;
+    margin-bottom: 0;
+  }
+
+  /* Bottom rule */
+  .bottom-rule {
+    position: absolute;
+    bottom: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0.5;
+  }
+
+  .handle {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Georgia', serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #6b5a45;
+  }
+
+  /* Sawdust particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: #c8963e;
+    opacity: 0;
+    animation: none;
+  }
+  .p1 { width: 3px; height: 3px; top: 200px; left: 140px; opacity: 0.12; }
+  .p2 { width: 2px; height: 2px; top: 350px; right: 160px; opacity: 0.1; }
+  .p3 { width: 4px; height: 4px; bottom: 260px; left: 200px; opacity: 0.08; }
+  .p4 { width: 2px; height: 2px; top: 480px; left: 100px; opacity: 0.1; }
+  .p5 { width: 3px; height: 3px; bottom: 340px; right: 120px; opacity: 0.09; }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="grain"></div>
+
+  <!-- Corner ornaments -->
+  <div class="corner corner-tl"></div>
+  <div class="corner corner-tr"></div>
+  <div class="corner corner-bl"></div>
+  <div class="corner corner-br"></div>
+
+  <!-- Dust particles -->
+  <div class="particle p1"></div>
+  <div class="particle p2"></div>
+  <div class="particle p3"></div>
+  <div class="particle p4"></div>
+  <div class="particle p5"></div>
+
+  <!-- Top rule -->
+  <div class="top-rule">
+    <div class="rule-line"></div>
+    <div class="rule-diamond"></div>
+    <div class="rule-line right"></div>
+  </div>
+
+  <div class="content">
+    <p class="eyebrow">Puyallup, WA · Est. 2024</p>
+
+    <div class="logo-wrap">
+      <img src="images/fulllogo_transparent.png" alt="Knot & Nail Co.">
+    </div>
+
+    <h1 class="headline">Something's<br>being <em>built.</em></h1>
+
+    <div class="divider"></div>
+
+    <p class="subtext">
+      Father &amp; son. Garage shop.<br>
+      <strong>Real wood. Real craft.</strong><br>
+      Handmade pieces for families who<br>appreciate the real thing.
+    </p>
+
+    <p class="tagline">Coming Soon · Follow Along</p>
+  </div>
+
+  <!-- Bottom rule -->
+  <div class="bottom-rule">
+    <div class="rule-line"></div>
+    <div class="rule-diamond"></div>
+    <div class="rule-line right"></div>
+  </div>
+
+  <div class="handle">@knotandnailco</div>
+</div>
+</body>
+</html>

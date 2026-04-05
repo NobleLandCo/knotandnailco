@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Knot & Nail Co. — Our story, where to find us, and how to get in touch. Handcrafted woodwork from Puyallup, WA." />
+  <title>About & Contact | Knot & Nail Co.</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/fulllogo_transparent.png" alt="Knot & Nail Co. Logo" />
+      </a>
+            <button class="hamburger" onclick="this.nextElementSibling || document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ====== PAGE HERO ====== -->
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.unsplash.com/photo-1581541234269-e6de8f9e8b15?w=1600&q=80');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <h1 class="page-hero-title">Our Story</h1>
+      <p class="page-hero-sub">Rooted in craft. Made in Puyallup.</p>
+    </div>
+  </div>
+
+  <!-- ====== OUR STORY — dark section ====== -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="about-story-grid">
+
+        <div class="about-story-text">
+          <span class="section-label">About Us</span>
+          <h2 class="section-title-lg light-text">Built to Last</h2>
+          <div class="divider-line"></div>
+          <p>Knot &amp; Nail Co. started in 2024 in Puyallup, WA with a simple idea: build things that last. Every piece is made by hand in our shop using quality materials, designed for real life in the Pacific Northwest.</p>
+          <p>No assembly lines. No shortcuts. Just wood, tools, and the kind of work you can pass down.</p>
+        </div>
+
+        <div>
+          <blockquote class="about-pull-quote">
+            "Build things that last. That's it. That's the whole idea."
+          </blockquote>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== WHERE TO FIND US — light section ====== -->
+  <section class="section-light">
+    <div class="container">
+      <span class="section-label" style="color: var(--brown);">Find Us</span>
+      <h2 class="section-title-lg dark-text">Where to Find Us</h2>
+      <div class="divider-line"></div>
+      <p class="section-body dark-text">Shop our work, follow the build process, or reach out directly.</p>
+
+      <div class="find-us-grid">
+
+        <a href="https://facebook.com/marketplace" target="_blank" rel="noopener" class="find-us-card">
+          <span class="find-us-icon">🛒</span>
+          <span class="find-us-platform">Marketplace</span>
+          <span class="find-us-name">Facebook</span>
+          <span class="find-us-sub">Shop local listings</span>
+        </a>
+
+        <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener" class="find-us-card">
+          <span class="find-us-icon">📸</span>
+          <span class="find-us-platform">Instagram</span>
+          <span class="find-us-name">@knotandnailco</span>
+          <span class="find-us-sub">Follow the build</span>
+        </a>
+
+        <span class="find-us-card disabled">
+          <span class="find-us-icon">🛍️</span>
+          <span class="find-us-platform">Coming Soon</span>
+          <span class="find-us-name">Etsy</span>
+          <span class="find-us-sub">Stay tuned</span>
+        </span>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== CONTACT — dark section ====== -->
+  <section class="section-charcoal">
+    <div class="container">
+      <div class="contact-inner">
+        <span class="section-label" style="display:block; text-align:center;">Contact</span>
+        <h2 class="section-title-lg light-text">Get in Touch</h2>
+        <div class="divider-line" style="margin: 1.4rem auto 2rem;"></div>
+        <p class="contact-lead">Have a question or ready to order? Send us a message and we'll get back to you.</p>
+
+        <form class="contact-form" action="#" method="post">
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us what you're looking for — product, size, custom details, etc." required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary form-submit">Send Message</button>
+
+        </form>
+
+        <p class="contact-email-note">
+          Or reach us directly at: <a href="mailto:knotandnailco@gmail.com">knotandnailco@gmail.com</a>
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <p>© 2024 Knot &amp; Nail Co. &nbsp;·&nbsp; Puyallup, WA &nbsp;·&nbsp; <a href="http://knotandnailco.com">knotandnailco.com</a></p>
+  </footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

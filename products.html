@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Knot & Nail Co. products — handmade mud kitchens, growth charts, dog dish stands, Talavera tile planters, and cornhole boards. Puyallup, WA." />
+  <title>Products | Knot & Nail Co.</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/fulllogo_transparent.png" alt="Knot & Nail Co. Logo" />
+      </a>
+            <button class="hamburger" onclick="this.nextElementSibling || document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ====== PAGE HERO ====== -->
+  <div class="page-hero">
+    <div class="page-hero-bg" style="background-image: url('https://images.pexels.com/photos/5974044/pexels-photo-5974044.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <h1 class="page-hero-title">Our Work</h1>
+      <p class="page-hero-sub">Built by hand. Made to last.</p>
+    </div>
+  </div>
+
+  <!-- ====== PRODUCT GRID ====== -->
+  <section class="products-section">
+    <div class="container">
+
+      <div class="product-grid">
+
+        <!-- 1. Kids Mud Kitchen -->
+        <div class="product-card">
+          <div class="product-card-visual">🪵</div>
+          <div class="product-card-body">
+            <h3>Kids Mud Kitchen</h3>
+            <div class="product-price">$200 – $300</div>
+            <p>The ultimate outdoor play station for little ones. Built tough for PNW weather.</p>
+            <a href="#" class="btn btn-brown">Message to Order</a>
+          </div>
+        </div>
+
+        <!-- 2. Kids Growth Chart -->
+        <div class="product-card">
+          <div class="product-card-visual">📏</div>
+          <div class="product-card-body">
+            <h3>Kids Growth Chart</h3>
+            <div class="product-price">$45 – $90</div>
+            <p>Track every inch of the journey. Personalized with name &amp; birthdate.</p>
+            <a href="#" class="btn btn-brown">Message to Order</a>
+          </div>
+        </div>
+
+        <!-- 3. Pet Growth Chart -->
+        <div class="product-card">
+          <div class="product-card-visual">🐾</div>
+          <div class="product-card-body">
+            <h3>Pet Growth Chart</h3>
+            <div class="product-price">$45 – $70</div>
+            <p>Because your pup's growth deserves to be remembered too.</p>
+            <a href="#" class="btn btn-brown">Message to Order</a>
+          </div>
+        </div>
+
+        <!-- 4. Dog Dish Stand -->
+        <div class="product-card">
+          <div class="product-card-visual">🐕</div>
+          <div class="product-card-body">
+            <h3>Dog Dish Stand</h3>
+            <div class="product-price">$40 – $80</div>
+            <p>Elevated feeding for your best friend. Easy to clean, built to last.</p>
+            <a href="#" class="btn btn-brown">Message to Order</a>
+          </div>
+        </div>
+
+        <!-- 5. Talavera Tile Planter -->
+        <div class="product-card">
+          <div class="product-card-visual">🌿</div>
+          <div class="product-card-body">
+            <h3>Talavera Tile Planter</h3>
+            <div class="product-price">$100 – $120</div>
+            <p>Wood-framed planters with hand-painted Talavera tile inlays. One of a kind.</p>
+            <a href="#" class="btn btn-brown">Message to Order</a>
+          </div>
+        </div>
+
+        <!-- 6. Cornhole Boards -->
+        <div class="product-card">
+          <div class="product-card-visual">🎯</div>
+          <div class="product-card-body">
+            <h3>Cornhole Boards</h3>
+            <div class="product-price">$80 – $150 / set</div>
+            <p>Game-day ready. Custom sets available for graduation season.</p>
+            <a href="#" class="btn btn-brown">Message to Order</a>
+          </div>
+        </div>
+
+      </div><!-- /product-grid -->
+
+      <div class="product-note">
+        <strong>All pieces are handmade to order.</strong>
+        Contact us on <a href="https://facebook.com/marketplace" target="_blank" rel="noopener">Facebook Marketplace</a> or <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener">Instagram</a> to place an order.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <p>© 2024 Knot &amp; Nail Co. &nbsp;·&nbsp; Puyallup, WA &nbsp;·&nbsp; <a href="http://knotandnailco.com">knotandnailco.com</a></p>
+  </footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

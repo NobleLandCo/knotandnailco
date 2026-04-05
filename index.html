@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Knot & Nail Co. — Handcrafted woodwork made with care in Puyallup, WA. Mud kitchens, growth charts, cornhole boards & more." />
+  <title>Knot & Nail Co. | Handcrafted Woodwork — Puyallup, WA</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ====== NAVIGATION ====== -->
+  <header class="site-header">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/fulllogo_transparent.png" alt="Knot & Nail Co. Logo" />
+      </a>
+            <button class="hamburger" onclick="this.nextElementSibling || document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ====== HERO ====== -->
+  <section class="hero">
+    <div class="hero-bg" style="background-image: url('https://images.pexels.com/photos/3637835/pexels-photo-3637835.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Puyallup, WA &nbsp;·&nbsp; Est. 2024</span>
+      <h1 class="hero-title">Knot &amp; Nail Co.</h1>
+      <p class="hero-subtitle">Handcrafted for the Pacific Northwest</p>
+      <a href="products.html" class="btn btn-outline-white">Shop Our Work</a>
+    </div>
+  </section>
+
+  <!-- ====== WHAT WE MAKE ====== -->
+  <section class="section-dark">
+    <div class="container">
+      <span class="section-label">Our Craft</span>
+      <h2 class="section-title-lg light-text">What We Make</h2>
+      <div class="divider-line"></div>
+      <p class="section-body">Each piece is built by hand in our Puyallup shop — no shortcuts, no flat-pack. Just solid wood, honest joinery, and something built to outlast the trend.</p>
+
+      <div class="preview-grid">
+
+        <div class="preview-card">
+          <span class="preview-card-label">Play</span>
+          <h3>Mud Kitchens</h3>
+          <p>Outdoor play stations built tough for PNW weather and little imaginations. Real wood, real build.</p>
+          <a href="products.html" class="preview-card-link">See Details</a>
+        </div>
+
+        <div class="preview-card">
+          <span class="preview-card-label">Heirloom</span>
+          <h3>Growth Charts</h3>
+          <p>Personalized wood charts for kids and pets — heirloom quality, every inch of the journey recorded.</p>
+          <a href="products.html" class="preview-card-link">See Details</a>
+        </div>
+
+        <div class="preview-card">
+          <span class="preview-card-label">Game Day</span>
+          <h3>Cornhole Boards</h3>
+          <p>Game-day ready sets, with custom options perfect for graduation season and backyard gatherings.</p>
+          <a href="products.html" class="preview-card-link">See Details</a>
+        </div>
+
+      </div>
+
+      <div class="preview-cta">
+        <a href="products.html" class="btn btn-outline-white">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOLLOW & FIND US ====== -->
+  <section class="section-light">
+    <div class="container">
+      <span class="section-label" style="color: var(--brown);">Connect</span>
+      <h2 class="section-title-lg dark-text">Follow Along &amp; Shop Local</h2>
+      <div class="divider-line"></div>
+      <p class="section-body dark-text">Find us where the community is — follow the build process, browse listings, or reach out directly to order.</p>
+
+      <div class="social-grid">
+
+        <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener" class="social-card">
+          <span class="social-card-platform">Instagram</span>
+          <span class="social-card-name">@knotandnailco</span>
+          <span class="social-card-handle">Follow the build</span>
+        </a>
+
+        <a href="https://www.facebook.com/profile.php?id=knotandnailco" target="_blank" rel="noopener" class="social-card">
+          <span class="social-card-platform">Facebook</span>
+          <span class="social-card-name">Knot &amp; Nail Co.</span>
+          <span class="social-card-handle">Like our page</span>
+        </a>
+
+        <span class="social-card disabled">
+          <span class="social-card-platform">Etsy</span>
+          <span class="social-card-name">Shop</span>
+          <span class="social-card-handle">Coming soon</span>
+        </span>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="site-footer">
+    <p>© 2024 Knot &amp; Nail Co. &nbsp;·&nbsp; Puyallup, WA &nbsp;·&nbsp; <a href="http://knotandnailco.com">knotandnailco.com</a></p>
+  </footer>
+
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
