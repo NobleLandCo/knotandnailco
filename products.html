@@ -3,9 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Knot & Nail Co. products — handmade mud kitchens, growth charts, dog dish stands, Talavera tile planters, and cornhole boards. Puyallup, WA." />
+  <meta name="description" content="Knot & Nail Co. products — handmade Talavera tile planters, growth charts, dog dish stands, and cornhole boards. Puyallup, WA." />
   <title>Products | Knot & Nail Co.</title>
   <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .product-card-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 4px 4px 0 0;
+    }
+    .product-card-visual-img {
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
 
@@ -15,7 +28,7 @@
       <a href="index.html" class="nav-logo">
         <img src="images/fulllogo_transparent.png" alt="Knot & Nail Co. Logo" />
       </a>
-            <button class="hamburger" onclick="this.nextElementSibling || document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+      <button class="hamburger" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
@@ -28,7 +41,7 @@
 
   <!-- ====== PAGE HERO ====== -->
   <div class="page-hero">
-    <div class="page-hero-bg" style="background-image: url('https://images.pexels.com/photos/5974044/pexels-photo-5974044.jpeg?auto=compress&cs=tinysrgb&w=1600');"></div>
+    <div class="page-hero-bg" style="background-image: url('images/planter-4.jpg');"></div>
     <div class="page-hero-overlay"></div>
     <div class="page-hero-content">
       <h1 class="page-hero-title">Our Work</h1>
@@ -42,36 +55,42 @@
 
       <div class="product-grid">
 
-        <!-- 1. Kids Mud Kitchen -->
+        <!-- 1. Talavera Tile Planter -->
         <div class="product-card">
-          <div class="product-card-visual">🪵</div>
+          <div class="product-card-visual product-card-visual-img">
+            <img src="images/planter-1.jpg" alt="Talavera Tile Planter with succulents" class="product-card-img" />
+          </div>
           <div class="product-card-body">
-            <h3>Kids Mud Kitchen</h3>
-            <div class="product-price">$200 – $300</div>
-            <p>The ultimate outdoor play station for little ones. Built tough for PNW weather.</p>
-            <a href="#" class="btn btn-brown">Message to Order</a>
+            <h3>Talavera Tile Planter</h3>
+            <div class="product-price">$100 – $120</div>
+            <p>Dark-stained wood frame with hand-painted Talavera tile inlays and antique copper ring hardware. Perfect for succulents, herbs, or your windowsill.</p>
+            <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener" class="btn btn-brown">Message to Order</a>
           </div>
         </div>
 
         <!-- 2. Kids Growth Chart -->
         <div class="product-card">
-          <div class="product-card-visual">📏</div>
+          <div class="product-card-visual product-card-visual-img">
+            <img src="images/growth-chart-1.jpg" alt="Kids wooden growth chart on wall" class="product-card-img" />
+          </div>
           <div class="product-card-body">
             <h3>Kids Growth Chart</h3>
             <div class="product-price">$45 – $90</div>
-            <p>Track every inch of the journey. Personalized with name &amp; birthdate.</p>
-            <a href="#" class="btn btn-brown">Message to Order</a>
+            <p>Track every inch of the journey. Hand-stained premium wood, personalized with name &amp; birthdate. An heirloom they'll keep forever.</p>
+            <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener" class="btn btn-brown">Message to Order</a>
           </div>
         </div>
 
         <!-- 3. Pet Growth Chart -->
         <div class="product-card">
-          <div class="product-card-visual">🐾</div>
+          <div class="product-card-visual product-card-visual-img">
+            <img src="images/growth-chart-2.jpg" alt="Wood growth chart in nursery" class="product-card-img" />
+          </div>
           <div class="product-card-body">
             <h3>Pet Growth Chart</h3>
             <div class="product-price">$45 – $70</div>
-            <p>Because your pup's growth deserves to be remembered too.</p>
-            <a href="#" class="btn btn-brown">Message to Order</a>
+            <p>Because your pup's first year deserves to be remembered too. Same heirloom build, personalized for your pet.</p>
+            <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener" class="btn btn-brown">Message to Order</a>
           </div>
         </div>
 
@@ -81,30 +100,19 @@
           <div class="product-card-body">
             <h3>Dog Dish Stand</h3>
             <div class="product-price">$40 – $80</div>
-            <p>Elevated feeding for your best friend. Easy to clean, built to last.</p>
-            <a href="#" class="btn btn-brown">Message to Order</a>
+            <p>Elevated feeding for your best friend. Easy to clean, solid wood, built to last.</p>
+            <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener" class="btn btn-brown">Message to Order</a>
           </div>
         </div>
 
-        <!-- 5. Talavera Tile Planter -->
-        <div class="product-card">
-          <div class="product-card-visual">🌿</div>
-          <div class="product-card-body">
-            <h3>Talavera Tile Planter</h3>
-            <div class="product-price">$100 – $120</div>
-            <p>Wood-framed planters with hand-painted Talavera tile inlays. One of a kind.</p>
-            <a href="#" class="btn btn-brown">Message to Order</a>
-          </div>
-        </div>
-
-        <!-- 6. Cornhole Boards -->
+        <!-- 5. Cornhole Boards -->
         <div class="product-card">
           <div class="product-card-visual">🎯</div>
           <div class="product-card-body">
             <h3>Cornhole Boards</h3>
             <div class="product-price">$80 – $150 / set</div>
-            <p>Game-day ready. Custom sets available for graduation season.</p>
-            <a href="#" class="btn btn-brown">Message to Order</a>
+            <p>Game-day ready. Custom sets available — perfect for graduation season and backyard gatherings.</p>
+            <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener" class="btn btn-brown">Message to Order</a>
           </div>
         </div>
 
@@ -112,7 +120,7 @@
 
       <div class="product-note">
         <strong>All pieces are handmade to order.</strong>
-        Contact us on <a href="https://facebook.com/marketplace" target="_blank" rel="noopener">Facebook Marketplace</a> or <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener">Instagram</a> to place an order.
+        DM us on <a href="https://instagram.com/knotandnailco" target="_blank" rel="noopener">Instagram</a> or find us on <a href="https://facebook.com/marketplace" target="_blank" rel="noopener">Facebook Marketplace</a> to place an order.
       </div>
 
     </div>
